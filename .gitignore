@@ -1,0 +1,15 @@
+#ignore all logs
+*.log
+logs
+
+
+#ignore all certificate files
+*.pem
+*.crts
+
+#ignore all block files
+*.block
+
+#ignore all msp files 
+msp/
+

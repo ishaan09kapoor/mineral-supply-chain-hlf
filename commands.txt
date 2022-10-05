@@ -1,0 +1,76 @@
+./network.sh up createChannel -c copper
+ ./network.sh deployCC -ccn rmi -ccp ../token-utxo/chaincode-go/ -ccv 1 -ccl go -c 'copper'
+
+#org0
+export PATH=${PWD}/../bin/:$PATH
+cd ~/go/src/github.com/ishaan09kapoor/fabric-samples/msc/
+export FABRIC_CFG_PATH=${PWD}/configtx/
+export CORE_PEER_TLS_ENABLED=true
+export CORE_PEER_LOCALMSPID="Org0MSP" 
+export CORE_PEER_MSPCONFIGPATH=${PWD}/organizations/peerOrganizations/org0.msc.com/users/User1@org0.msc.com/msp
+export CORE_PEER_TLS_ROOTCERT_FILE=~/go/src/github.com/ishaan09kapoor/fabric-samples/msc/organizations/peerOrganizations/org0.msc.com/peers/peer0.org0.msc.com/tls/ca.crt
+export CORE_PEER_ADDRESS=localhost:7051
+export TARGET_TLS_OPTIONS=(-o localhost:7050 ordererTLSHostnameOverride rmi.msc.com --tls --cafile "/home/ishaan/go/src/github.com/ishaan09kapoor/fabric-samples/msc/organizations/ordererOrganizations/msc.com/msp/tlscacerts/tlsca.msc.com-cert.pem" --peerAddresses localhost:7051 --tlsRootCertFiles /home/ishaan/go/src/github.com/ishaan09kapoor/fabric-samples/msc/organizations/peerOrganizations/org0.msc.com/peers/peer0.org0.msc.com/tls/ca.crt --peerAddresses localhost:9051 --tlsRootCertFiles "/home/ishaan/go/src/github.com/ishaan09kapoor/fabric-samples/msc/organizations/peerOrganizations/org1-1.msc.com/peers/peer0.org1-1.msc.com/tls/ca.crt" --peerAddresses localhost:11051 --tlsRootCertFiles "/home/ishaan/go/src/github.com/ishaan09kapoor/fabric-samples/msc/organizations/peerOrganizations/org1-2.msc.com/peers/peer0.org1-2.msc.com/tls/ca.crt" --peerAddresses localhost:13051 --tlsRootCertFiles "/home/ishaan/go/src/github.com/ishaan09kapoor/fabric-samples/msc/organizations/peerOrganizations/org2-1.msc.com/peers/peer0.org2-1.msc.com/tls/ca.crt")
+
+#org1-1
+cd ~/go/src/github.com/ishaan09kapoor/fabric-samples/msc/
+export PATH=${PWD}/../bin/:$PATH
+export FABRIC_CFG_PATH=${PWD}/configtx/
+export CORE_PEER_TLS_ENABLED=true
+export CORE_PEER_LOCALMSPID="Org1-1MSP" 
+export CORE_PEER_MSPCONFIGPATH=${PWD}/organizations/peerOrganizations/org1-1.msc.com/users/User1@org1-1.msc.com/msp
+export CORE_PEER_TLS_ROOTCERT_FILE=~/go/src/github.com/ishaan09kapoor/fabric-samples/msc/organizations/peerOrganizations/org1-1.msc.com/peers/peer0.org1-1.msc.com/tls/ca.crt
+export CORE_PEER_ADDRESS=localhost:9051
+export TARGET_TLS_OPTIONS=(-o localhost:7050 ordererTLSHostnameOverride rmi.msc.com --tls --cafile "/home/ishaan/go/src/github.com/ishaan09kapoor/fabric-samples/msc/organizations/ordererOrganizations/msc.com/msp/tlscacerts/tlsca.msc.com-cert.pem" --peerAddresses localhost:7051 --tlsRootCertFiles /home/ishaan/go/src/github.com/ishaan09kapoor/fabric-samples/msc/organizations/peerOrganizations/org0.msc.com/peers/peer0.org0.msc.com/tls/ca.crt --peerAddresses localhost:9051 --tlsRootCertFiles "/home/ishaan/go/src/github.com/ishaan09kapoor/fabric-samples/msc/organizations/peerOrganizations/org1-1.msc.com/peers/peer0.org1-1.msc.com/tls/ca.crt" --peerAddresses localhost:11051 --tlsRootCertFiles "/home/ishaan/go/src/github.com/ishaan09kapoor/fabric-samples/msc/organizations/peerOrganizations/org1-2.msc.com/peers/peer0.org1-2.msc.com/tls/ca.crt" --peerAddresses localhost:13051 --tlsRootCertFiles "/home/ishaan/go/src/github.com/ishaan09kapoor/fabric-samples/msc/organizations/peerOrganizations/org2-1.msc.com/peers/peer0.org2-1.msc.com/tls/ca.crt")
+
+
+#org1-2
+cd ~/go/src/github.com/ishaan09kapoor/fabric-samples/msc/
+export PATH=${PWD}/../bin/:$PATH
+export FABRIC_CFG_PATH=${PWD}/configtx/
+export CORE_PEER_TLS_ENABLED=true
+export CORE_PEER_LOCALMSPID="Org1-2MSP" 
+export CORE_PEER_MSPCONFIGPATH=${PWD}/organizations/peerOrganizations/org1-2.msc.com/users/User1@org1-2.msc.com/msp
+export CORE_PEER_TLS_ROOTCERT_FILE=~/go/src/github.com/ishaan09kapoor/fabric-samples/msc/organizations/peerOrganizations/org1-2.msc.com/peers/peer0.org1-2.msc.com/tls/ca.crt
+export CORE_PEER_ADDRESS=localhost:11051
+export TARGET_TLS_OPTIONS=(-o localhost:7050 ordererTLSHostnameOverride rmi.msc.com --tls --cafile "/home/ishaan/go/src/github.com/ishaan09kapoor/fabric-samples/msc/organizations/ordererOrganizations/msc.com/msp/tlscacerts/tlsca.msc.com-cert.pem" --peerAddresses localhost:7051 --tlsRootCertFiles /home/ishaan/go/src/github.com/ishaan09kapoor/fabric-samples/msc/organizations/peerOrganizations/org0.msc.com/peers/peer0.org0.msc.com/tls/ca.crt --peerAddresses localhost:9051 --tlsRootCertFiles "/home/ishaan/go/src/github.com/ishaan09kapoor/fabric-samples/msc/organizations/peerOrganizations/org1-1.msc.com/peers/peer0.org1-1.msc.com/tls/ca.crt" --peerAddresses localhost:11051 --tlsRootCertFiles "/home/ishaan/go/src/github.com/ishaan09kapoor/fabric-samples/msc/organizations/peerOrganizations/org1-2.msc.com/peers/peer0.org1-2.msc.com/tls/ca.crt" --peerAddresses localhost:13051 --tlsRootCertFiles "/home/ishaan/go/src/github.com/ishaan09kapoor/fabric-samples/msc/organizations/peerOrganizations/org2-1.msc.com/peers/peer0.org2-1.msc.com/tls/ca.crt")
+
+#org2-1
+export PATH=${PWD}/../bin/:$PATH
+cd ~/go/src/github.com/ishaan09kapoor/fabric-samples/msc/
+export FABRIC_CFG_PATH=${PWD}/configtx/
+export CORE_PEER_TLS_ENABLED=true
+export CORE_PEER_LOCALMSPID="Org2-1MSP" 
+export CORE_PEER_MSPCONFIGPATH=${PWD}/organizations/peerOrganizations/org2-1.msc.com/users/User1@org2-1.msc.com/msp
+export CORE_PEER_TLS_ROOTCERT_FILE=~/go/src/github.com/ishaan09kapoor/fabric-samples/msc/organizations/peerOrganizations/org2-1.msc.com/peers/peer0.org2-1.msc.com/tls/ca.crt
+export CORE_PEER_ADDRESS=localhost:13051
+export TARGET_TLS_OPTIONS=(-o localhost:7050 ordererTLSHostnameOverride rmi.msc.com --tls --cafile "/home/ishaan/go/src/github.com/ishaan09kapoor/fabric-samples/msc/organizations/ordererOrganizations/msc.com/msp/tlscacerts/tlsca.msc.com-cert.pem" --peerAddresses localhost:7051 --tlsRootCertFiles /home/ishaan/go/src/github.com/ishaan09kapoor/fabric-samples/msc/organizations/peerOrganizations/org0.msc.com/peers/peer0.org0.msc.com/tls/ca.crt --peerAddresses localhost:9051 --tlsRootCertFiles "/home/ishaan/go/src/github.com/ishaan09kapoor/fabric-samples/msc/organizations/peerOrganizations/org1-1.msc.com/peers/peer0.org1-1.msc.com/tls/ca.crt" --peerAddresses localhost:11051 --tlsRootCertFiles "/home/ishaan/go/src/github.com/ishaan09kapoor/fabric-samples/msc/organizations/peerOrganizations/org1-2.msc.com/peers/peer0.org1-2.msc.com/tls/ca.crt" --peerAddresses localhost:13051 --tlsRootCertFiles "/home/ishaan/go/src/github.com/ishaan09kapoor/fabric-samples/msc/organizations/peerOrganizations/org2-1.msc.com/peers/peer0.org2-1.msc.com/tls/ca.crt")
+
+#initilaize
+peer chaincode invoke "${TARGET_TLS_OPTIONS[@]}" -C test14 -n mycc2 -c '{"function": "Initialize", "Args": ["somename", "some symbol"]}'
+
+#mint tokens
+peer chaincode invoke "${TARGET_TLS_OPTIONS[@]}" -C test14 -n mycc2 -c '{"function": "Mint", "Args": ["5000"]}'
+
+#Get client ID
+peer chaincode query -C test14 -n mycc2 -c '{"function": "ClientID", "Args":[]}'
+
+#Transfer tokens
+peer chaincode invoke "${TARGET_TLS_OPTIONS[@]}" -C copper -n rmi -c '{"function":"Transfer","Args":["[\"6020e6bcd709a5cb7665e2f167803aece77109ab14997ae7fbf8141fd30d3b01.0\"]","[{\"utxo_key\":\"\",\"owner\":\"eDUwOTo6Q049VXNlcjFAb3JnMC5tc2MuY29tLE9VPWNsaWVudCxMPVNhbiBGcmFuY2lzY28sU1Q9Q2FsaWZvcm5pYSxDPVVTOjpDTj1jYS5vcmcwLm1zYy5jb20sTz1vcmcwLm1zYy5jb20sTD1TYW4gRnJhbmNpc2NvLFNUPUNhbGlmb3JuaWEsQz1VUw==\",\"amount\":1000},{\"utxo_key\":\"\",\"owner\":\"eDUwOTo6Q049VXNlcjFAb3JnMS0xLm1zYy5jb20sT1U9Y2xpZW50LEw9U2FuIEZyYW5jaXNjbyxTVD1DYWxpZm9ybmlhLEM9VVM6OkNOPWNhLm9yZzEtMS5tc2MuY29tLE89b3JnMS0xLm1zYy5jb20sTD1TYW4gRnJhbmNpc2NvLFNUPUNhbGlmb3JuaWEsQz1VUw==\",\"amount\":2000},{\"utxo_key\":\"\",\"owner\":\"eDUwOTo6Q049VXNlcjFAb3JnMS0yLm1zYy5jb20sT1U9Y2xpZW50LEw9U2FuIEZyYW5jaXNjbyxTVD1DYWxpZm9ybmlhLEM9VVM6OkNOPWNhLm9yZzEtMi5tc2MuY29tLE89b3JnMS0yLm1zYy5jb20sTD1TYW4gRnJhbmNpc2NvLFNUPUNhbGlmb3JuaWEsQz1VUw==\",\"amount\":2000}]"]}'
+
+peer chaincode invoke "${TARGET_TLS_OPTIONS[@]}" -C copper -n rmi -c '{"function":"Transfer","Args":["[\"ba0763aaae5dbd0af78c50aa4aaa7bc7130a771b9a70765b8158e705242c44e3.1\"]","[{\"utxo_key\":\"\",\"owner\":\"eDUwOTo6Q049VXNlcjFAb3JnMS0xLm1zYy5jb20sT1U9Y2xpZW50LEw9U2FuIEZyYW5jaXNjbyxTVD1DYWxpZm9ybmlhLEM9VVM6OkNOPWNhLm9yZzEtMS5tc2MuY29tLE89b3JnMS0xLm1zYy5jb20sTD1TYW4gRnJhbmNpc2NvLFNUPUNhbGlmb3JuaWEsQz1VUw==\",\"amount\":1000},{\"utxo_key\":\"\",\"owner\":\"eDUwOTo6Q049VXNlcjFAb3JnMi0xLm1zYy5jb20sT1U9Y2xpZW50LEw9U2FuIEZyYW5jaXNjbyxTVD1DYWxpZm9ybmlhLEM9VVM6OkNOPWNhLm9yZzItMS5tc2MuY29tLE89b3JnMi0xLm1zYy5jb20sTD1TYW4gRnJhbmNpc2NvLFNUPUNhbGlmb3JuaWEsQz1VUw==\",\"amount\":1000}]"]}'
+
+#org0
+eDUwOTo6Q049VXNlcjFAb3JnMC5tc2MuY29tLE9VPWNsaWVudCxMPVNhbiBGcmFuY2lzY28sU1Q9Q2FsaWZvcm5pYSxDPVVTOjpDTj1jYS5vcmcwLm1zYy5jb20sTz1vcmcwLm1zYy5jb20sTD1TYW4gRnJhbmNpc2NvLFNUPUNhbGlmb3JuaWEsQz1VUw==
+
+#org1-1
+eDUwOTo6Q049VXNlcjFAb3JnMS0xLm1zYy5jb20sT1U9Y2xpZW50LEw9U2FuIEZyYW5jaXNjbyxTVD1DYWxpZm9ybmlhLEM9VVM6OkNOPWNhLm9yZzEtMS5tc2MuY29tLE89b3JnMS0xLm1zYy5jb20sTD1TYW4gRnJhbmNpc2NvLFNUPUNhbGlmb3JuaWEsQz1VUw==
+
+#org1-2
+eDUwOTo6Q049VXNlcjFAb3JnMS0yLm1zYy5jb20sT1U9Y2xpZW50LEw9U2FuIEZyYW5jaXNjbyxTVD1DYWxpZm9ybmlhLEM9VVM6OkNOPWNhLm9yZzEtMi5tc2MuY29tLE89b3JnMS0yLm1zYy5jb20sTD1TYW4gRnJhbmNpc2NvLFNUPUNhbGlmb3JuaWEsQz1VUw==
+
+#org2-1
+eDUwOTo6Q049VXNlcjFAb3JnMi0xLm1zYy5jb20sT1U9Y2xpZW50LEw9U2FuIEZyYW5jaXNjbyxTVD1DYWxpZm9ybmlhLEM9VVM6OkNOPWNhLm9yZzItMS5tc2MuY29tLE89b3JnMi0xLm1zYy5jb20sTD1TYW4gRnJhbmNpc2NvLFNUPUNhbGlmb3JuaWEsQz1VUw==
+
+#txn1
+{\"utxo_key\":\"ba0763aaae5dbd0af78c50aa4aaa7bc7130a771b9a70765b8158e705242c44e3.0\",\"owner\":\"eDUwOTo6Q049VXNlcjFAb3JnMC5tc2MuY29tLE9VPWNsaWVudCxMPVNhbiBGcmFuY2lzY28sU1Q9Q2FsaWZvcm5pYSxDPVVTOjpDTj1jYS5vcmcwLm1zYy5jb20sTz1vcmcwLm1zYy5jb20sTD1TYW4gRnJhbmNpc2NvLFNUPUNhbGlmb3JuaWEsQz1VUw==\",\"amount\":1000},{\"utxo_key\":\"ba0763aaae5dbd0af78c50aa4aaa7bc7130a771b9a70765b8158e705242c44e3.1\",\"owner\":\"eDUwOTo6Q049VXNlcjFAb3JnMS0xLm1zYy5jb20sT1U9Y2xpZW50LEw9U2FuIEZyYW5jaXNjbyxTVD1DYWxpZm9ybmlhLEM9VVM6OkNOPWNhLm9yZzEtMS5tc2MuY29tLE89b3JnMS0xLm1zYy5jb20sTD1TYW4gRnJhbmNpc2NvLFNUPUNhbGlmb3JuaWEsQz1VUw==\",\"amount\":2000},{\"utxo_key\":\"ba0763aaae5dbd0af78c50aa4aaa7bc7130a771b9a70765b8158e705242c44e3.2\",\"owner\":\"eDUwOTo6Q049VXNlcjFAb3JnMS0yLm1zYy5jb20sT1U9Y2xpZW50LEw9U2FuIEZyYW5jaXNjbyxTVD1DYWxpZm9ybmlhLEM9VVM6OkNOPWNhLm9yZzEtMi5tc2MuY29tLE89b3JnMS0yLm1zYy5jb20sTD1TYW4gRnJhbmNpc2NvLFNUPUNhbGlmb3JuaWEsQz1VUw==\",\"amount\":2000}
