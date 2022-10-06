@@ -9,7 +9,7 @@ This markdown guides the reader through the various components of the code and h
 ## About the Blockchain
 The exisitng blockchain has 4 peer orgainizations namely, org0.msc.com, org1-1.msc.com, org1-2.msc.com,and org2-1.msc.com. Apart from this we also have an orderer organisation which can be reached at rmi.msc.com. Each organization has one peer node with the name of peer0. 
 
-For our proof of concept, we used only one orderer organisation, Responsible Mineral Initiative (rmi). More orderers can be setup and generted by following the instructions given in section _____. Similarly more organizations can join the mineral supply chain following the instructions in section ____.
+For our proof of concept, we used only one orderer organisation, Responsible Mineral Initiative (rmi). More orderers can be setup and generted by following the instructions given in the section [Utilising and Expanding on the Project](#utilandexpproj). Similarly more organizations can join the mineral supply chain following the instructions in section [Utilising and Expanding on the Project](#utilandexpproj).
 
 ## Running the Blockchain
 In this section, we explain how one can run the msc blockchain on their organizational devices. 
@@ -112,4 +112,11 @@ peer chaincode query -C test14 -n mycc2 -c '{"function": "ClientID", "Args":[]}'
 ```
 
 ## Contributing To The Project
+To contribute to the project, clone the project and create your own branch. One you have created your own branch, you can make the chaanges that you want. After making the changes, please push the code and initiate a pull request. After thoroughly reviewing your commit, we will accordingly accomodate your code. 
 
+## <a id="utilandexpproj"></a>Utilising and Expanding on the Project
+If you wish to use this project, you can modify the following files to achieve your goals.
+> **To modify blockchain structure:** `./configtx/*.yaml`
+> **To modify chaincode:** `./rmi-chaincode-go/*`
+> **To impliment modified chaincode**: `./scripts/*.sh`, `organizations/*.yaml/json/sh`
+> 
