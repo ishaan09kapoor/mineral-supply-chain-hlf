@@ -116,11 +116,11 @@ To contribute to the project, clone the project and create your own branch. One 
 
 ## <a id="utilandexpproj"></a>Utilising and Expanding on the Project
 If you wish to use this project, you can modify the following files to achieve your goals.\
-> **To modify blockchain structure:** `./configtx/*.yaml`\
-> **To modify chaincode:** `./rmi-chaincode-go/*`\
-> **To impliment modified chaincode**: `./scripts/*.sh`, `organizations/*.yaml/json/sh`\
+ **To modify blockchain structure:** `./configtx/*.yaml`\
+ **To modify chaincode:** `./rmi-chaincode-go/*`\
+ **To impliment modified chaincode**: `./scripts/*.sh`, `organizations/*.yaml/json/sh`\
 
-###
-Authors: Ishaan Kapoor\
+###Authors: 
+Ishaan Kapoor\
 Dr. William Pratt-Rogers\
 [Hyperledger-IBM](https://github.com/hyperledger)
