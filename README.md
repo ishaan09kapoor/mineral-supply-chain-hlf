@@ -120,7 +120,7 @@ If you wish to use this project, you can modify the following files to achieve y
  **To modify chaincode:** `./rmi-chaincode-go/*`\
  **To impliment modified chaincode**: `./scripts/*.sh`, `organizations/*.yaml/json/sh`
 
-###Authors: 
+###  Authors: 
 Ishaan Kapoor\
 Dr. William Pratt-Rogers\
 [Hyperledger-IBM](https://github.com/hyperledger)
