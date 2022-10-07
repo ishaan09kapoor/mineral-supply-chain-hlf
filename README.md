@@ -115,10 +115,10 @@ peer chaincode query -C test14 -n mycc2 -c '{"function": "ClientID", "Args":[]}'
 To contribute to the project, clone the project and create your own branch. One you have created your own branch, you can make the chaanges that you want. After making the changes, please push the code and initiate a pull request. After thoroughly reviewing your commit, we will accordingly accomodate your code. 
 
 ## <a id="utilandexpproj"></a>Utilising and Expanding on the Project
-If you wish to use this project, you can modify the following files to achieve your goals.
-> **To modify blockchain structure:** `./configtx/*.yaml`
-> **To modify chaincode:** `./rmi-chaincode-go/*`
-> **To impliment modified chaincode**: `./scripts/*.sh`, `organizations/*.yaml/json/sh`
+If you wish to use this project, you can modify the following files to achieve your goals.\
+> **To modify blockchain structure:** `./configtx/*.yaml`\
+> **To modify chaincode:** `./rmi-chaincode-go/*`\
+> **To impliment modified chaincode**: `./scripts/*.sh`, `organizations/*.yaml/json/sh`\
 
 ###
 Authors: Ishaan Kapoor\
