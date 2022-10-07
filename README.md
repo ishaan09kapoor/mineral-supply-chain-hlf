@@ -118,7 +118,7 @@ To contribute to the project, clone the project and create your own branch. One 
 If you wish to use this project, you can modify the following files to achieve your goals.\
  **To modify blockchain structure:** `./configtx/*.yaml`\
  **To modify chaincode:** `./rmi-chaincode-go/*`\
- **To impliment modified chaincode**: `./scripts/*.sh`, `organizations/*.yaml/json/sh`\
+ **To impliment modified chaincode**: `./scripts/*.sh`, `organizations/*.yaml/json/sh`
 
 ###Authors: 
 Ishaan Kapoor\
